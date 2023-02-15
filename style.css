@@ -1,0 +1,401 @@
+/* all code is my own unless otherwise stated */
+
+.navbar{
+    background-color: rgb(255,22,22);
+    font-size: x-large;
+    font-weight: 999;
+}
+.footer{
+    background-color: rgb(120, 68, 136);
+}
+.content {
+    min-height: calc(100vh - 120px); /* 120px is the height of the footer */
+ } 
+ footer.footer {
+    position: relative;
+    clear: both;
+ }
+
+
+/* default background colour for each page */
+body {
+    background-color: rgb(0, 0, 0);
+}
+
+/* text formatting used within the grey welcome title box*/
+.welcome h1, h2, h3{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.welcome h2{
+    font-size: large;
+}
+.welcome h3{
+    font-size: medium;
+}
+
+/* used to make text more readable whilst still allowing the image below to be visible */
+/* used to welcome the user to each page and inform them of its contents */
+.welcome{
+    text-align: center;
+    margin: 20px;
+    background-color: rgb(216, 216, 216);
+    opacity: 80%;
+    color:black;
+    border-radius: 30px;
+    padding:20px;    
+}
+
+/* used to separate sections, eg merchandise from albums on shop page */
+.heading h2{
+    background-color: rgb(120, 68, 136);
+    font-size: xx-large;
+    text-emphasis: bold;
+    text-align: center;
+    padding:20px;    
+    border-radius: 30px;
+    width: fit-content;
+    align-self: center;
+    margin: auto;
+    color:white
+}
+
+/* used for large blocks of information */
+/* mainly used on about page */
+.para {
+    /* centres blocks horizontally */
+    margin: auto;
+
+    background-color: rgb(0, 0, 0);
+    opacity: 0;
+    color: white;
+    border-radius: 30px;
+    text-align: center;
+    font-size: larger;
+    /* width adapts to viewport but wont exceed 100vh */
+    max-width: 100vh;
+    /* ensures boxes are large enough to scroll past so the animation can be seen */
+    min-height: 100vh;
+    /* arranges content based on viewport */
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    transition: all 1s;
+    filter: blur(5px);
+    transform: translateX(-100%);
+
+    padding: 20px;
+    }
+    
+    .para h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    }
+
+
+/* if user does not like animations then they will not  be used on about page*/
+@media(prefers-reduced-motion){
+    .para{
+        transition:none;
+    }
+}
+
+/* about page text animations */
+.show{
+    opacity: 80%;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+/* resize album images */
+.album{
+    width:500px; 
+    padding:10px;
+    transition: transform 0.2s ease-out;
+}
+
+.album.clicked {
+    transform: scale(1.1);
+}
+
+.albumButton{
+    align-items: center;
+    background-color: #000;
+}
+
+/* hyper link formatting */
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+
+/* flex used in index page to align icons */
+/* source: https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-prefixing-flexbox */
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    height: 200px;
+}  
+.flex-item {
+    margin: auto;
+}
+
+/* used to format the form on contact page */
+.form {
+    /* background */
+    background-image: url("images/background/mic-right.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* font */
+    text-align: left;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* increase distance between form and nav bar */
+    margin: 20px auto;
+    color:rgb(0, 0, 0);
+    font-weight: bold;
+
+    /* rounds edge of form */
+    border-radius: 30px;
+    /* 20px distance from edge of container */
+    padding:20px;
+    min-width: 12rem;
+    max-width: 100rem;
+    font-size: x-large;
+    }
+
+.inputBox{
+    max-width: 300px;
+}
+
+/* shop items container */
+.shop{
+    text-align: center;
+    margin: 20px;
+    background-color: rgb(216, 216, 216);
+    opacity: 80%;
+    color:black;
+    border-radius: 30px;
+    padding:20px;
+        
+}
+
+.itemName{
+    font-size: larger;
+    font-weight: bold;
+    height: 60px;
+}
+
+#scrollBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    
+    border-color: white;
+    padding: 12px;
+    color: white;
+    background-color: rgb(255,22,22);
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 100px;
+}
+
+.artist{
+    font-weight: bold;
+}
+
+/* card code from https://www.w3schools.com/howto/howto_css_product_card.asp */
+/* used to style items on shop page */
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 30px;
+}  
+
+.card button:hover {
+    opacity: 0.7;
+}
+.card button:disabled{
+    opacity: 0.5;
+}
+
+.cart-footer {
+    justify-content: center;
+}
+
+/* set height of images on the shop page */
+.items{
+    height:310px;
+    object-fit: contain;    
+}
+
+/* .something{
+    max-height: 450px;
+} */
+
+.cart-items{
+    background-color: rgb(216, 216, 216);
+    color: #000;
+    font-size: small;    
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+
+}
+.cartBorder{
+    border: 2px solid #000;
+    padding: 10px;
+    border-radius: 30px;
+
+}
+
+/* total price text */
+.cart-total-price {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #000;
+    font-size: 18px;
+    border-radius: 100px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+/* border around total price */
+.totalPrice {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgb(255,22,22);
+    padding: 10px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.cart-item-quantity{
+    padding: 10px;
+    border-radius: 30px;
+
+    display: inline-block;
+    width: 10px;
+    text-align: center;
+    line-height: 30px;
+     margin: 0 10px;
+    vertical-align: middle;
+}
+
+.btn{
+    width: fit-content;
+    height: 10px;
+    width: 10px;
+    font-size: smaller;
+    padding: 100 0 100px;
+    line-height: 10px;
+    vertical-align: middle;
+    border-spacing: 30px;
+    text-emphasis: none;
+}
+  
+
+.totalPrice p:first-child {
+    margin-right: 10px;
+}
+
+.cartPadding{
+    width: 250px;   
+}
+
+.checkout{
+    background-color: rgb(216, 216, 216);
+    border:none;
+
+}
+.checkout button{
+    font-size: 18px;
+    border-radius: 100px;
+    padding: 20px;
+}
+
+
+.cart-row {
+    width: 100%;
+}
+
+
+.cart-item-name, .cart-item-price, .cart-item-quantity {
+    flex: 1;
+    text-align: center;
+}
+
+.decrease, .increase, .remove-item {
+    flex: 1;
+    text-align: center;
+}
+
+/* when view port is narrow the following changes are made to 
+the shop page to ensure that everything is readable. the user will
+need to scroll horizontally to see some content*/
+@media (max-width: 430px) {
+
+    .shop{
+        min-width: 450px;
+    }
+
+    .cart-items {
+        flex-direction: column;
+        align-items: flex-start;
+        min-width: 400px;
+    }
+    
+    .cart-item-image, .cart-item-name, .cart-item-price, .cart-item-quantity, .decrease, .increase, .remove-item {
+        /* width: 100%; */
+        padding: 0.5px;
+
+    }
+    .card button {
+        border: none;
+        outline: 0;
+        color: white;
+        background-color: black;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        /* font-size: 18px; */
+        border-radius: 30px;
+    } 
+    .cart-item-quantity{
+        /* border: 2px solid rgb(255,22,22); */
+        /* padding: 10px; */
+        border-radius: 30px;
+    
+        display: inline-block;
+        width: 10px;
+        text-align: center;
+        /* line-height: 30px; */
+        /* margin: 0 10px; */
+        vertical-align: middle;
+    }
+    .btn{
+        width: fit-content;
+        /* height: 10px;
+        width: 10px; */
+        font-size: smaller;
+        /* padding: 100 0 100px; */
+        line-height: 10px;
+        /* vertical-align: middle; */
+        border-spacing: 30px;
+        text-emphasis: none;
+    } 
+}

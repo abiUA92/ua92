@@ -1,0 +1,149 @@
+<!-- all code is my own unless otherwise stated -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"> 
+       <!--makes webpage responsive  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- changes name in the tab -->
+    <title>Apollo Studio</title>
+    <!-- imports bootstrap css values source: https://getbootstrap.com/docs/5.2/getting-started/introduction/ -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- link to external css -->
+    <link rel="stylesheet" href="style.css" >
+    <!-- put site logo on the browser tab  -->
+    <link rel="icon" type="image/x-icon" href="images/apollo-logo-black-no-bg.png">
+
+    <style>
+      /* set background image */
+      body{
+        /* image source: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf_VeRNVQ42uc0pLp7Rt7FnUPIjvna160AVXWTt_wqNRqdQz1r */
+        background-image: url("images/background/purple-mixing.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;        
+      }
+    </style>
+    
+  </head>
+  <body class="bg-dark">
+
+
+    <!-- navigation bar -->
+    <!-- using code from https://getbootstrap.com/docs/5.2/getting-started/introduction/ to ensure it is adaptive to different screen sizes -->
+    <nav class="navbar navbar-expand-lg" style = "background-color: rgb(255,22,22);">
+      <div class="container-fluid">
+        <!-- user can click the logo or "home" to return to welcome page-->
+        <!-- logo made using https://www.canva.com/ -->
+        <a class="navbar-brand" href="index.html"><img alt="home" src="images/apollo-logo-black-no-bg.png" width = 65></a>
+        <!-- nav bar expands/contracts depending on screen size. user accesses other links using hamburger button -->
+        <!-- aria labels make the site accessible for those using assistive technology -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" ></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- links to other pages -->
+          <div class="navbar-nav me-auto mb-2 mb-lg-0">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link"  href="shop.html">Shop</a>
+              <a class="nav-link"  href="music.html">Music</a>
+              <a class="nav-link"  href="about.html">Our Story</a>
+              <a class="nav-link"  href="contact.html">Contact us</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- box of text to welcome user to the site -->
+  <div class="container">
+    <div class = "welcome">
+      <h1>Welcome!</h1>
+      <h2>Here at Apollo Studio we love to make and listen to music</h2>
+      <h2>Check out some of our favourite albums and our merch shop!</h2>
+      <h2>Or contact us to book our facilities</h2>
+    </div>
+  </div>
+
+<!-- 4 images that, when clicked, take the user to the relevant page -->
+ <div class="flex-container ">   <!--use flex classes to style with CSS to ensure that they will align properly on smaller screens-->
+            <!-- icons made using https://www.canva.com/ -->
+      <div class="flex-item">
+        <a href="shop.html"><img src="images/icons/shop.png" alt="Shop" class= "image-responsive" style="width:300px ;height:300px ; opacity: 90%;"></a>
+      </div>
+      <div class="flex-item">
+        <a href="music.html"><img src="images/icons/music.png" alt="Music" style="width:300px ;height:300px ; opacity: 90%;"></a>
+      </div>
+      <div class="flex-item">
+        <a href="about.html"><img src="images/icons/about.png" alt="About" style="width:300px ;height:300px ; opacity: 90%;"></a>
+      </div>
+      <div class="flex-item">
+        <a href="contact.html"><img src="images/icons/contact.png" alt="Contact" style="width:300px ;height:300px ; opacity: 90%;"></a>
+      </div>
+  </div>
+
+<!-- link to bootstrap javascript source: https://getbootstrap.com/docs/5.2/getting-started/introduction/ -->
+
+<!-- ensures that the footer does not cover content -->
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+</body>
+
+
+  <!-- footer source: https://mdbootstrap.com/docs/standard/navigation/footer/ -->
+<footer>
+  <div class="footer text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Form -->
+    <section class="">
+      <form>
+         <!--Grid row-->
+        <div class="row d-flex justify-content-center">
+          <!--Grid column-->
+          <div class="col-auto">
+            <p class="pt-2">
+              <strong>Sign up for our newsletter</strong>
+            </p>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-5 col-12">
+            <!-- Email input -->
+            <div class="form-outline form-white mb-4">
+              <input type="email" id="form5Example29" class="form-control" placeholder="Email address">
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-auto">
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-outline-light mb-4" style="width: fit-content; height: fit-content; padding:15px">
+              Subscribe
+            </button>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </form>
+    </section>
+    <!-- Section: Form -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 Copyright:
+    <a class="text-white" href="">ApolloStudio.com</a>
+  </div>
+  <!-- Copyright -->
+</div>
+</footer>
+<!-- Footer -->
+
+</html>

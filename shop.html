@@ -1,0 +1,308 @@
+<!-- all code is my own unless otherwise stated -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, initial-scale=1">
+
+    <title>Apollo Studio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" >
+
+    <link rel="icon" type="image/x-icon" href="images/apollo-logo-black-no-bg.png">
+
+    <style>
+      /* update size of navbar and footer on only this page when
+      viewport is narrow */
+      @media (max-width: 430px) {
+        .footer, .navbar{
+          min-width: 480px;
+        }
+      }
+    </style>
+
+  </head>
+
+  <body class="bg-dark">
+
+<!-- navigation bar -->
+    <nav class="navbar navbar-expand-lg " >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"><img alt="Home" src="images/apollo-logo-black-no-bg.png" height = 65></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" ></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="navbar-nav me-auto mb-2 mb-lg-0">
+              <a class="nav-link" href="index.html" >Home</a>
+              <a class="nav-link active" aria-current="page" href="shop.html">Shop</a> 
+              <a class="nav-link" href="music.html">Music</a>             
+              <a class="nav-link" href="about.html">Our Story</a>            
+              <a class="nav-link" href="contact.html">Contact us</a>            
+          </div>
+
+        </div>
+      </div>
+    </nav>
+
+    <!-- page title and description -->
+    <div class="container">
+      <div class="welcome">
+        <h1>Welcome to our shop!</h1>
+        <h2>Here you can check out our merch and some of our favourite albums</h2>
+      </div>
+    </div>
+
+
+<!-- merchandise shop section -->
+
+    <!-- heading for merch section -->
+    <div class="container">
+      <div class="heading">
+        <h2>Merchandise</h2>
+      </div>
+    </div>
+    
+<!-- displays all of the merchandise to user and allows them to add to cart -->
+<!-- when user presses the add to cart button the item name, price and image is passed in to a JS function, see script -->
+  <div class="card bg-dark">
+    <div class="shop">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <!-- merch images created using https://www.customink.com/ndx/#/ -->
+            <img src="images/merch/black-logo-t-shirt.png" alt="White t shirt with black Apollo Studio logo" class= "img-fluid d-inline-block align-text-top items">
+            <p class="itemName">Black Apollo T Shirt</p>
+            <p>£25.99</p>
+            <p><button onclick="addToCart('Black Apollo T Shirt', '25.99', 'images/merch/black-logo-t-shirt.png');">Add to Cart</button></p>
+          </div>
+          <div class="col-sm-4">
+            <img src="images/merch/logo-hat.png" alt="red beanie hat with black Apollo Studio logo on fold" class= "img-fluid d-inline-block align-text-top items">
+            <p class="itemName">Apollo Hat</p>
+            <p>£15.99</p>
+            <p><button onclick="addToCart('Apollo Hat', '15.99', 'images/merch/logo-hat.png');">Add to Cart</button></p>
+          </div> 
+          <div class="col-sm-4">
+            <img src="images/merch/grey-hoodie.png" alt="grey hoodie with black Apollo Studio logo on left breast" class= "img-fluid d-inline-block align-text-top items">
+            <p class="itemName">Grey Hoodie</p>
+            <p>£39.99</p>
+            <p><button onclick="addToCart('Grey Hoodie', '39.99', 'images/merch/grey-hoodie.png');">Add to Cart</button></p>
+          </div>
+          <div class="col-sm-4">
+            <img src="images/merch/logo-bag.png" alt="backpack with black lower half pocket and red upper half with black logo" class= "img-fluid d-inline-block align-text-top items">
+            <p class="itemName">Apollo Bag</p>
+            <p>£49.99</p>
+            <p><button onclick="addToCart('Apollo Bag', '49.99', 'images/merch/logo-bag.png');">Add to Cart</button></p>
+          </div>       
+          <div class="col-sm-4">
+            <img src="images/merch/logo-pants.png" alt="grey cuffed joggers with white waist tie and logo above left knee" class= "img-fluid d-inline-block align-text-top items">
+            <p class="itemName">Apollo Joggers </p>
+            <p>£24.99</p>
+            <p><button onclick="addToCart('Apollo Joggers', '24.99', 'images/merch/logo-pants.png');">Add to Cart</button></p>
+          </div>
+          <div class="col-sm-4">
+            <img src="images/merch/red-logo-t-shirt.png" alt="White t shirt with red Apollo Studio logo" class= "img-fluid d-inline-block align-text-top items">
+            <p class="itemName">Red Apollo T Shirt</p>
+            <p>£25.99</p>
+            <p><button onclick="addToCart('Red Apollo T Shirt', '25.99', 'images/merch/red-logo-t-shirt.png');" >Add to Cart</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- album section -->
+
+<!-- album shop heading -->
+  <div class="container">
+    <div class="heading">
+      <h2>Albums</h2>
+    </div>
+  </div>
+
+
+<!-- shows all of the albums a user can buy and allows them to add to cart -->
+  <div class="card bg-dark">
+    <div class="shop">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <!-- source: https://m.media-amazon.com/images/I/81zCfhnHo7L._AC_SY355_.jpg -->                
+            <img src="images/album-covers/beetlejuice.jpg" alt="Beetlejuice album cover" class= "img-fluid d-inline-block align-text-top album">
+            <p class="artist">Broadway Cast</p>
+			<p class="itemName">Beetlejuice</p>
+            <p>£5.99</p>
+            <p><button onclick="addToCart('Beetlejuice', '5.99', 'images/album-covers/beetlejuice.jpg');" >Add to Cart</button></p>
+          </div>
+          <div class="col-sm-4">
+             <!-- source: https://upload.wikimedia.org/wikipedia/en/8/87/WickedCastRecording.jpg -->
+             <img src="images/album-covers/Wicked.jpg" alt="Wicked album cover" class= "img-fluid d-inline-block align-text-top album">
+			 <p class="artist">Broadway Cast</p>
+			 <p class="itemName">Wicked</p>
+            <p>£5.99</p>
+            <p><button onclick="addToCart('Wicked', '5.99', 'images/album-covers/Wicked.jpg');">Add to Cart</button></p>
+          </div> 
+          <div class="col-sm-4">
+            <!-- source: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.co.uk%2FNewsies-Original-Broadway-Cast-Recording%2Fdp%2FB08F1VCQT4&psig=AOvVaw2-d534Ex5Zb9NXPvsDcU0n&ust=1674921217842000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCPCQ1fON6PwCFQAAAAAdAAAAABAE -->
+            <img src="images/album-covers/Newsies.jfif" alt="Newsies album cover" class= "img-fluid d-inline-block align-text-top album">
+			<p class="artist">Broadway Cast</p>
+			<p class="itemName">Newsies</p>
+            <p>£5.99</p>
+            <p><button onclick="addToCart('Newsies', '5.99', 'images/album-covers/Newsies.jfif');" >Add to Cart</button></p>
+          </div>
+          <div class="col-sm-4">
+            <!-- source: https://upload.wikimedia.org/wikipedia/en/5/5b/Hamilton_cast_recording_cover.jpeg -->
+            <img src="images/album-covers/Hamilton.jpeg" alt="Hamilton album cover" class= "img-fluid d-inline-block align-text-top album">
+			<p class="artist">Broadway Cast</p>
+			<p class="itemName">Hamilton</p>
+            <p>£5.99</p>
+            <p><button onclick="addToCart('Hamilton', '5.99','images/album-covers/Hamilton.jpeg');" >Add to Cart</button></p>
+          </div>       
+          <div class="col-sm-4">
+            <!-- source: https://cdns-images.dzcdn.net/images/cover/fe7e337213f8a8c064cb5b0c3a251e23/264x264.jpg -->
+            <img src="images/album-covers/Queen.jpg" alt="Queen album cover" class= "img-fluid d-inline-block align-text-top album">
+			<p class="artist">Queen</p>
+			<p class="itemName">Queen Greatest Hits</p>
+            <p>£5.99</p>
+            <p><button onclick="addToCart('Queen Greatest Hits', '5.99','images/album-covers/Queen.jpg');" >Add to Cart</button></p>
+          </div>
+          <div class="col-sm-4">
+            <!-- source: https://upload.wikimedia.org/wikipedia/en/5/5a/ELO-Out_of_the_Blue_Lp.jpg -->
+            <img src="images/album-covers/ELO.jpg" alt="Electric Light Orchestra album cover" class= "img-fluid d-inline-block align-text-top album">
+            <p class = "artist">ELO</p>
+			<p class="itemName">Out of the Blue</p>
+            <p>£5.99</p>
+            <p><button onclick="addToCart('Out of the Blue', '5.99','images/album-covers/ELO.jpg');" >Add to Cart</button></p>
+          </div>
+          <div class="col-sm-4">
+            <!-- source: https://www.billboard.com/wp-content/uploads/2022/10/taylor-swift-red-taylors-version-billboard-1240.jpg?w=600 -->
+            <img src="images/album-covers/taylor-swift-red.webp" alt="Red - Taylor Swift album cover" class= "img-fluid d-inline-block align-text-top album">
+            <p class = "artist">Taylor Swift</p>
+            <p class="itemName">Red</p>
+            <p>£5.99</p>
+            <p><button onclick="addToCart('Red', '5.99','images/album-covers/taylor-swift-red.webp');" >Add to Cart</button></p>
+          </div>
+          <div class="col-sm-4">
+            <!-- source: https://medium.com/canvs/into-the-storm-the-story-of-pink-floyd-s-iconic-album-art-4fa36ae2841e -->
+            <img src="images/album-covers/pink-floyd.jpeg" alt="The Darkside of the Moon - Pink Floyd album cover" class= "img-fluid album">
+            <p class="artist">Pink-Floyd</p>
+            <p class="itemName">The Darkside of the Moon</p>
+            <p>£5.99</p>
+            <p><button onclick="addToCart('The Darkside of the Moon', '5.99','images/album-covers/pink-floyd.jpeg');" >Add to Cart</button></p>
+          </div>
+          <div class="col-sm-4">
+            <!-- source: https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2F%25C3%25B7_%2528album%2529&psig=AOvVaw3kqizK0nMxML7_jyrsvkAB&ust=1674923323985000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCJD8g-CV6PwCFQAAAAAdAAAAABAD -->
+            <img src="images/album-covers/ed-sheeran.png" alt="Divide - Ed Sheeran album cover" class= "img-fluid d-inline-block align-text-top album">
+            <p class = "artist">Ed Sheeran</p>
+            <p class="itemName">Divide</p>
+            <p>£5.99</p>
+            <p><button onclick="addToCart('Divide', '5.99','images/album-covers/ed-sheeran.png'); " >Add to Cart</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- cart -->
+
+  <div id="cart" class="container">
+    <div class="heading">
+      <h2>Cart</h2>
+    </div>
+  </div>
+
+  <div class="card bg-dark">
+    <div class="shop cart">
+      <div class="container">
+        <div id="cartItems">     
+          <!-- javascript adds item rows to cart here -->
+        </div>
+
+        <!-- checkout menu with total cost, pay and clear buttons
+        updated and given functionality in JS script -->
+        <div class="d-flex card flex-column cart-footer mt-2 mb-3 checkout">
+          <div class="p-2 totalPrice">
+            <p>Total: </p>
+            <p id="cart-total-price"></p>
+          </div>
+          <div class="p-2">
+            <button class="btn btn-danger dontDelete" type="button" data-action="clear-cart" onclick="clearCart();">Clear Cart </button>
+          </div>
+          <div class="p-2 ">
+            <button class="btn btn-primary" type="button" data-action="check-out" onclick="alert('Payment collected. Have a nice day'); clearCart()">Pay </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<!-- button fixed on lower right of the screen to assist the user in navigating to the cart -->
+  <button id="scrollBtn" >Scroll to Cart</button>
+
+<!-- scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+
+</body>
+
+  <!-- footer source: https://mdbootstrap.com/docs/standard/navigation/footer/ -->
+<footer>
+  <div class="footer text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Form -->
+    <section class="">
+      <form>
+        <!--Grid row-->
+        <div class="row d-flex justify-content-center">
+          <!--Grid column-->
+          <div class="col-auto">
+            <p class="pt-2">
+              <strong>Sign up for our newsletter</strong>
+            </p>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-5 col-12">
+            <!-- Email input -->
+            <div class="form-outline form-white mb-4">
+              <input type="email" id="form5Example29" class="form-control" placeholder="Email address">
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-auto">
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-outline-light mb-4" style="width: fit-content; height: fit-content; padding:15px">
+              Subscribe
+            </button>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </form>
+    </section>
+    <!-- Section: Form -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 Copyright:
+    <a class="text-white" href="">ApolloStudio.com</a>
+  </div>
+  <!-- Copyright -->
+  </div>
+</footer>
+<!-- Footer -->
+
+</html>

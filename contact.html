@@ -1,0 +1,190 @@
+<!-- all code is my own unless otherwise stated -->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Apollo Studio</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="icon" type="image/x-icon" href="images/apollo-logo-black-no-bg.png">
+
+</head>
+
+<body class="bg-dark">
+
+  <nav class="navbar navbar-expand-lg " style="background-color: rgb(255,22,22);">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html"><img alt="Home" src="images/apollo-logo-black-no-bg.png" width=65></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav me-auto mb-2 mb-lg-0">
+          <a class="nav-link"  href="index.html">Home</a>
+          <a class="nav-link"  href="shop.html">Shop</a>
+          <a class="nav-link"  href="music.html">Music</a>
+          <a class="nav-link"  href="about.html">Our Story</a>
+          <a class="nav-link active" aria-current="page" href="contact.html">Contact us</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- contact form -->
+  <!-- asks for users name, email address (so the company can respond) and their message -->
+  <!-- user can use this form to send feedback or book a recording session etc -->
+  <!-- using bootstrap to create responsive input boxes -->
+  <!-- each field has validation to prevent the form from submitting with missing data and (where possible) incorrect data -->
+
+
+  <div class="form input-group flex">
+    <form onsubmit="return submitForm();" method="POST">
+
+      <label for="firstName">First Name:</label>
+      <input type="text" class="form-control inputBox" id="firstName" required>
+
+      <br><br>
+
+      <label for="lastName">Last Name:</label>
+      <input type="text"  class="form-control inputBox" id="lastName"  required>
+
+      <br><br>
+
+      <label for="emailAdd">Email Address:</label>
+      <input type="email" class="form-control inputBox" id="emailAdd"  required>
+
+      <br><br>
+
+      <label for="subject">Subject:</label>
+
+      <br>
+
+      <select id="subject" name="subject" style="height:50px; background:white; font-size: large;" required>
+        <!-- disabled field that prompts the user so they know what they are being asked for -->
+        <option value="" disabled selected hidden>What do you want to discuss?</option>
+        <option value = "booking">Book a recording session</option>
+        <option value = "rental">Rent equipment</option>
+        <option value = "other">Other</option>
+      </select>
+
+      <br><br>
+
+      <!-- restrict width so it fits well on small screens > 300px -->
+      <label for="message">Message:</label>
+      <br><textarea id="message" rows="4" cols="50" style="width:300px" required></textarea>
+      <br><br>
+
+      <button type="submit"  id="submit" value="submit" onclick="return submitForm()">Submit</button>
+      <button type="reset"  id="reset" value="reset">Reset</button>
+
+    </form>
+  </div>
+
+  <br><br>
+
+  <script>
+// storing data in sessionstorage as method of debugging and to show how the system could be scaled with backend development 
+
+// as soon as the value in the dropdown is changed the subject variable is updated
+    var select = document.querySelector("select");
+      select.addEventListener("change", function () {
+      var selectedValue = this.value;
+      console.log(selectedValue);
+      sessionStorage.setItem("subject", selectedValue);
+
+    });
+    
+    function submitForm() {
+
+      var firstName = document.getElementById("firstName");
+      
+      var lastName = document.getElementById("lastName");
+      
+      
+      var message = document.getElementById("message");
+      var email = document.getElementById("emailAdd");
+      
+      sessionStorage.setItem("email", email.value);
+      sessionStorage.setItem("Sname", lastName.value);
+      sessionStorage.setItem("Fname", firstName.value);
+      sessionStorage.setItem("message", message.value);
+      
+      //send message to user so they know form has been received
+      // alert("Thanks for your message, we will get back to you by email ASAP")
+
+    }
+
+ 
+  </script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+</body>
+
+
+
+<!-- footer source: https://mdbootstrap.com/docs/standard/navigation/footer/ -->
+<!-- comment -->
+<footer>
+  <div class="footer text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Form -->
+    <section class="">
+      <form>
+        <!--Grid row-->
+        <div class="row d-flex justify-content-center">
+          <!--Grid column-->
+          <div class="col-auto">
+            <p class="pt-2">
+              <strong>Sign up for our newsletter</strong>
+            </p>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-5 col-12">
+            <!-- Email input -->
+            <div class="form-outline form-white mb-4">
+              <input type="email" id="form5Example29" class="form-control" placeholder="Email address">
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-auto">
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-outline-light mb-4" style="width: fit-content; height: fit-content; padding:15px">
+              Subscribe
+            </button>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </form>
+    </section>
+    <!-- Section: Form -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 Copyright:
+    <a class="text-white" href="">ApolloStudio.com</a>
+  </div>
+  <!-- Copyright -->
+  </div>
+</footer>
+<!-- Footer -->
+
+</html>

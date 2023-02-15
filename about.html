@@ -1,0 +1,156 @@
+<!-- all code is my own unless otherwise stated -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Apollo Studio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" >
+
+    <!-- script loads after html elements -->
+    <script defer src="about.js"></script>
+
+    <link rel="icon" type="image/x-icon" href="images/apollo-logo-black-no-bg.png">
+
+    <style>
+      /* set background image */
+      body{
+        /* image from https://www.classical-music.com/features/works/10-piano-concertos-you-may-not-know/ */
+        background-image: url("images/background/piano-hand.jpg");
+        
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;        
+      }
+    </style>
+
+  </head>
+  <body class="bg-dark">
+
+<!-- navigation bar -->
+    <nav class="navbar navbar-expand-lg " >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"><img alt="Home" src="images/apollo-logo-black-no-bg.png" width = 65></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" ></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="navbar-nav me-auto mb-2 mb-lg-0">
+              <a class="nav-link"  href="index.html">Home</a>
+              <a class="nav-link" href="shop.html">Shop</a>  
+              <a class="nav-link" href="music.html">Music</a>            
+              <a class="nav-link active"  aria-current="page" href="about.html">Our Story</a>            
+              <a class="nav-link"  href="contact.html">Contact us</a>            
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <br>
+    <!-- page title -->
+    <div class="welcome" style = "max-width: 500px; margin: auto; opacity: 100%;">
+      <h1>Apollo Studio</h1>
+    </div>
+
+    <br>
+<!-- company information separated in to blocks
+blocks animated using css and js slide in from left side as user scrolls down -->
+    <div class="para">
+      <h2>Who we are</h2>
+      <p>Welcome to our recording studio, where music and technology come together to create magic. Our journey started in 2020, when three brothers with a deep passion for music and a vision to bring high-end recording equipment to all musicians, founded this studio.</p>
+    </div>
+
+    <br>
+
+    <div class="para">
+      <h2>Where we are</h2>
+      <p>Located in the vibrant city of Manchester, we have established ourselves as a hub for local musicians and music enthusiasts alike. Our state-of-the-art studio is equipped with the latest technology, including the best recording and mixing equipment, to produce the highest quality audio recordings. We work hard to ensure that our studio is not only professional but also comfortable, creating an atmosphere that inspires creativity and fosters a love of music.</p>
+    </div>
+
+    <br>
+
+    <div class="para">
+      <h2>Our vision</h2>
+      <p>In addition to recording services, we also offer our favorite albums and merchandise for sale, as a way to share our passion for music with the world. Our goal is to support local musicians and help them reach their full potential. Whether you're an aspiring musician, a band looking to record an album, or a producer searching for the perfect space to create music, our studio has everything you need to bring your visions to life.</p>
+    </div>
+
+    <br>
+
+    <div class="para">
+      <h2>Our team</h2>
+      <p>Our team of dedicated professionals is always on hand to provide expert guidance and support. With years of experience and a love of music, they are committed to ensuring that every recording session is a success. We believe that music has the power to bring people together and we are proud to be a part of that community.</p>
+    </div>
+
+    <br>
+        
+    <div class="para">
+      <h2>Join us</h2>
+      <p>So, if you're ready to take your music to the next level, we invite you to come and experience the magic of our recording studio. Let us help you bring your music to life and share it with the world. </p>
+    </div>   
+ 
+
+
+
+    <br>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    
+  </body>
+
+
+  <!-- footer source: https://mdbootstrap.com/docs/standard/navigation/footer/ -->
+<footer>
+  <div class="footer text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Form -->
+    <section class="">
+      <form>
+        <!--Grid row-->
+        <div class="row d-flex justify-content-center">
+          <!--Grid column-->
+          <div class="col-auto">
+            <p class="pt-2">
+              <strong>Sign up for our newsletter</strong>
+            </p>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-5 col-12">
+            <!-- Email input -->
+            <div class="form-outline form-white mb-4">
+              <input type="email" id="form5Example29" class="form-control" placeholder="Email address">
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-auto">
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-outline-light mb-4" style="width: fit-content; height: fit-content; padding:15px">
+              Subscribe
+            </button>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </form>
+    </section>
+    <!-- Section: Form -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 Copyright:
+    <a class="text-white" href="">ApolloStudio.com</a>
+  </div>
+  <!-- Copyright -->
+  </div>
+</footer>
+<!-- Footer -->
+
+</html>
