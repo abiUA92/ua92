@@ -132,17 +132,25 @@ a:visited { text-decoration: none; }
 a:hover { text-decoration: none; }
 a:active { text-decoration: none; }
 
-/* flex used in index page to align icons */
 /* source: https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-prefixing-flexbox */
+/* (Coyier, 2013) */
+/* flex container and item used on index page to align icons */
 .flex-container {
+    /* sets container to use flexbox layout */
     display: flex;
+    /* text will wrap on to new line when needed */
     flex-flow: row wrap;
+    /* equal spaces between elements */
     justify-content: space-between;
+    /* sets height of container to be 200px */
     height: 200px;
 }  
 .flex-item {
+    /* sets item to centre horizontally in the flex container */
     margin: auto;
 }
+
+/* own code continues below */
 
 /* used to format the form on contact page */
 .form {
